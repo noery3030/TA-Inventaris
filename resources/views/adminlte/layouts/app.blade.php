@@ -11,7 +11,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     Inventaris PeTIK II Jombang |
     @yield('title')
   </title>
-  
+
+  <link rel="icon" href="{{ asset('assets/dist/img/iconinv.png') }}">
 
 
   <!-- Google Font: Source Sans Pro -->

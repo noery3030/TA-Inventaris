@@ -43,9 +43,9 @@ $rs4 = App\Models\Lokasi::all();
             @foreach ($data as $row)
             <form method="POST" action="{{ route('barang.update', $row->id) }}" enctype="multipart/form-data">
               @csrf {{ method_field('PUT') }}
-              <div class="form-group row">
-                <label for="no_inv" class="col-1 col-form-label">No Inventaris</label> 
-                <div class="col-4">
+              <div class="form-group row"> 
+                <div class="col-2">
+                  <label for="no_inv" class="form-label">No Inventaris</label>
                   <input class="form-control
                               @error('no_inv')
                               is-invalid
@@ -59,9 +59,10 @@ $rs4 = App\Models\Lokasi::all();
                               @enderror
                 </div>
               </div>
+
                 <div class="form-group row">
-                  <label for="nama" class="col-1 col-form-label">Nama Barang</label> 
                   <div class="col-4">
+                    <label for="nama" class="form-label">Nama Barang</label> 
                     <input class="form-control
                                 @error('nama')
                                 is-invalid
@@ -74,10 +75,8 @@ $rs4 = App\Models\Lokasi::all();
                                     </div>
                                 @enderror
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="spesifikasi" class="col-1 col-form-label">Spesifikasi</label> 
                   <div class="col-4">
+                    <label for="spesifikasi" class="form-label">Spesifikasi</label> 
                     <input class="form-control
                                 @error('spesifikasi')
                                 is-invalid
@@ -90,10 +89,8 @@ $rs4 = App\Models\Lokasi::all();
                                     </div>
                                 @enderror
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="jmhbarang" class="col-1 col-form-label"> Jumlah Barang</label> 
                   <div class="col-4">
+                    <label for="jmhbarang" class="form-label"> Jumlah Barang</label> 
                     <input class="form-control
                                 @error('jumlah')
                                 is-invalid
@@ -107,9 +104,10 @@ $rs4 = App\Models\Lokasi::all();
                                 @enderror
                   </div>
                 </div>
+                
                 <div class="form-group row">
-                  <label for="area" class="col-1 col-form-label">Area</label> 
                   <div class="col-4">
+                    <label for="area" class="form-label">Area</label> 
                     <select class="form-control 
                                 @error('idarea')
                                 is-invalid
@@ -130,10 +128,8 @@ $rs4 = App\Models\Lokasi::all();
                     </div>
                     @enderror
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="lokasi" class="col-1 col-form-label">Lokasi</label> 
                   <div class="col-4">
+                    <label for="lokasi" class="form-label">Lokasi</label> 
                     <select class="form-control 
                                 @error('idarea')
                                 is-invalid
@@ -154,10 +150,8 @@ $rs4 = App\Models\Lokasi::all();
                     </div>
                     @enderror
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="kategori" class="col-1 col-form-label">kategori</label> 
                   <div class="col-4">
+                    <label for="kategori" class="form-label">kategori</label> 
                     <select class="form-control 
                     @error('idkategori')
                     is-invalid
@@ -179,9 +173,10 @@ $rs4 = App\Models\Lokasi::all();
                     @enderror
                   </div>
                 </div>
+                
                 <div class="form-group row">
-                  <label for="kategori" class="col-1 col-form-label">Kondisi</label> 
-                  <div class="col-4">
+                  <div class="col-5">
+                    <label for="kategori" class="form-label">Kondisi</label> 
                     <select class="form-control 
                     @error('kondisi')
                     is-invalid
@@ -202,34 +197,21 @@ $rs4 = App\Models\Lokasi::all();
                   </div>
                   @enderror
                   </div>
-                </div>
-                  <div class="form-group row">
-                    <label for="foto" class="col-1 col-form-label"> Foto</label> 
-                    <div class="form-group">
+
+                    <div class="form-group col-7">
+                      <label for="foto" class="form-label"> Foto</label> 
                         <input class="form-control" type="file" name="foto">
                         <span class="text-warning text-sm">Harap isi kembali foto, Tidak bisa format .webp</span>
                     </div>
                   </div>
-                <div class="form-group row">
-                  <label for="keterangan" class="col-1 col-form-label 
-                  @error('keterangan')
-                  is-invalid
-                  @enderror">Keterangan</label> 
-                  <div class="col-4">
-                    <textarea id="keterangan" name="keterangan"
-                    cols="40" rows="5" class="form-control"> {{ old('keterangan',$row->keterangan) }}</textarea>
-                    @error('keterangan')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                    @enderror
-                  </div>
-                </div> 
-                <div class="form-group row">
-                  <div class="offset-1 col-1">
-                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </div>
+
+                  <div class="form-group row">
+                    <div class="col-12">
+                      <label for="keterangan" class="form-label">Keterangan</label> 
+                      <textarea id="keterangan" name="keterangan" cols="20" rows="3" class="form-control"> {{ old('keterangan',$row->keterangan) }}</textarea>
+                    </div>
+                  </div> 
+                <button name="submit" type="submit" class="btn btn-primary  mx-auto">Submit</button>
               </form>
 
               @endforeach

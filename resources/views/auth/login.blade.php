@@ -2,10 +2,37 @@
 
 @section('content')
 
-<body class="hold-transition login-page ">
+<style>
+  body {
+  background-image: url("/assets/dist/img/bg-inv.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url("/assets/dist/img/bg-inv.jpg");
+  }
+}
+
+b{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: azure;
+}
+.card{
+  opacity: 86%;
+}
+.card-body{
+  border-radius: 5px !important;
+}
+</style>
+
+
+<body class="hold-transition login-page img-fluid" >
     <div class="login-box">
       <div class="login-logo">
-        <a href="{{ route('home') }}"><b>Inventaris PeTIK II Jombang</b></a>
+        <b><strong>Inventaris PeTIK II Jombang</strong> </b>
       </div>
       <!-- /.login-logo -->
       <div class="card">
